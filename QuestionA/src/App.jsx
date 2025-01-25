@@ -21,8 +21,8 @@ const Stopwatch = () => {
   // Function to format time into mm:ss:ms
   const formatTime = (time) => {
     const minutes = Math.floor(time / 60000).toString().padStart(2, '0');
-    const seconds = Math.floor((time % 60000) / 100).toString().padStart(2, '0');
-    const milliseconds = Math.floor((time % 1000) / 10).toString().padStart(2, '0');
+    const seconds = Math.floor((time % 60000) / 200).toString().padStart(2, '0');
+    const milliseconds = Math.floor(time % 100).toString().padStart(2, '0');
     return `${minutes}:${seconds}:${milliseconds}`;
   };
 
@@ -50,7 +50,7 @@ const Stopwatch = () => {
           onClick={handleToggle}
           className="px-6 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
         >
-          {isRunning ? 'Pause' : 'Resume'}
+          {isRunning ? 'Pause' : 'Start'}
         </button>
         <button
           onClick={handleReset}
